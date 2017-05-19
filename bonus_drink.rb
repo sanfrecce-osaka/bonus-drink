@@ -14,7 +14,7 @@ class BonusDrink
       # 空き瓶3本目まではおまけなし
       return 0 if empty_bottle < BONUS_PER
 
-      # 最初のおまけ + (最初のおまけを引いた残り本数) / (2本目のおまけ以降はおまけ一本を含めて3本)
+      # 最初のおまけ + (最初のおまけと交換した空き瓶を引いた残り本数) / (2本目のおまけ以降はおまけ一本を含めて3本)
       BONUS_GET + (empty_bottle.to_i - BONUS_PER) / (BONUS_PER - BONUS_GET)
     end
   end
